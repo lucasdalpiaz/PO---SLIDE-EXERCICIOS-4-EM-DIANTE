@@ -1,0 +1,167 @@
+\documentclass[a4paper,oneside]{article}
+
+
+\pagestyle{myheadings}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Pacotes para acentua��o %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{cite}
+%\usepackage{natbib}     %% note the absence of options
+% Change how references are included (see the natbib package).
+%\setcitestyle{square,numbers,authoryear}
+%\setcitestyle{authoryear}
+\usepackage[alf]{abntex2cite}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{ae}
+\usepackage{booktabs}
+%\usepackage[ansinew]{inputenc}
+\usepackage{graphicx}
+
+\usepackage[brazilian]{babel}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{algpseudocode,algorithm}
+% Declaracoes em Português
+\algrenewcommand\algorithmicend{\textbf{fim}}
+\algrenewcommand\algorithmicdo{\textbf{faça}}
+\algrenewcommand\algorithmicwhile{\textbf{enquanto}}
+\algrenewcommand\algorithmicfor{\textbf{para}}
+\algrenewcommand\algorithmicif{\textbf{se}}
+\algrenewcommand\algorithmicthen{\textbf{então}}
+\algrenewcommand\algorithmicelse{\textbf{senão}}
+\algrenewcommand\algorithmicreturn{\textbf{devolve}}
+\algrenewcommand\algorithmicfunction{\textbf{função}}
+
+% Rearranja os finais de cada estrutura
+\algrenewtext{EndWhile}{\algorithmicend\ \algorithmicwhile}
+\algrenewtext{EndFor}{\algorithmicend\ \algorithmicfor}
+\algrenewtext{EndIf}{\algorithmicend\ \algorithmicif}
+\algrenewtext{EndFunction}{\algorithmicend\ \algorithmicfunction}
+
+% O comando For, a seguir, retorna 'para #1 -- #2 até #3 faça'
+\algnewcommand\algorithmicto{\textbf{até}}
+\algrenewtext{For}[3]%
+{\algorithmicfor\ #1 $\gets$ #2 \algorithmicto\ #3 \algorithmicdo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage{nomencl}
+\makenomenclature
+\renewcommand{\nomname}{Lista de Símbolos}
+
+
+\linespread{1.5} % espa�amento entre linhas
+
+
+
+% horizontal
+\setlength{\hoffset}{-1in}
+
+\setlength{\oddsidemargin}{3.0cm} 
+
+\setlength{\textwidth}{160mm} % (210mm - 30mm - 20mm)
+
+\setlength{\parindent}{1.25cm} % identa��o de cada par�grafo
+
+% vertical
+\setlength{\voffset}{-1in}
+\addtolength{\voffset}{2.0cm}
+
+\setlength{\topmargin}{0.0cm}
+
+\setlength{\headheight}{5mm}
+\setlength{\headsep}{5mm}
+
+\setlength{\textheight}{247mm} % (297mm - 30mm - 20mm)
+
+
+
+\title{Respostas slides sobre programação linear}
+
+\author{Lucas Campos Dal Piaz de Souza \\
+Mestrado de Engenharia de Produção e Sistemas Computacionais\\
+
+Universidade Federal Fluminense
+
+} 
+
+
+
+\begin{document}
+
+
+\pagenumbering{arabic}
+
+\maketitle
+
+%\citeonline{nome_referenciado no refs}  \cite{nome_referenciado no refs}
+
+
+%\thispagestyle{empty} 
+
+\section*{Exemplo 4}
+\begin{center}
+    Minimizar  $3x_1 + 6x_2 + 5x_3 + 6x_4$ \\
+    Sujeitos à \\
+  $8x_1 + 3x_2 + 5x_3 + 6x_4 \leq 15000$ \\
+  $5x_1 + 7x_2 + 4x_3 + 5x_4 \leq 20000$ \\
+  $12x_1 + 9x_2 + 8x_3 + 7x_4 \leq 40000$ \\
+  $x_1, x_2, x_3, x_4 \geq 0$\\
+\end{center}
+
+\section*{Exemplo 5}
+\begin{center}
+    Maximizar  $0,23x_1 + 0,3x_2 + 0,42x_3 $ \\
+    Sujeitos à \\
+  $3,5x_1 + 5x_2 + 6,7x_3 \leq 150$ \\
+  $x_1 + \frac{4}{3}x_2 + \frac{5}{3}x_3 \leq 40$ \\
+  $x_1 + x_2 + x_3 \leq 30$ \\
+  $x_1, x_2, x_3 \geq 0$\\
+\end{center}
+
+\section*{Exemplo 6}
+
+\begin{center}
+  Minimizar  $0,5x_1 + 0,18x_2 + 0,2x_3 + 0,16x_4 + 0,3x_5 + 0,1x_6$ \\
+  Sujeitos à \\
+  $225x_1 + 364x_2 + 337x_3 + 385x_4 + 15x_5 + 42x_6 \leq 3200$ \\
+  $7x_1 + 0x_2 + 2x_3 + 0x_4 + 87x_5 + 13x_6 \leq 750$ \\
+  $0x_1 + 0x_2 + 3x_3 + 0x_4 + 12x_5 + 59x_6 \leq 70$ \\
+  $2,9x_1 + 1,3x_2 + 7,9x_3 + 0,1x_4 + 1,3x_5 + 0,7x_6 \leq 10$ \\
+  $11x_1 + 9x_2 + 86x_3 + 0x_4 + 43x_5 + 34x_6 \leq 650$ \\
+  $x_1, x_2, x_3, x_4, x_5, x_6 \geq 0$\\
+  
+    
+\end{center}
+
+\section*{Exemplo 7}
+
+\begin{center}
+$x_{1j}$ corresponde ao abastecimento da região São paulo I para os cinco destinos, com j de 1 até 5\\
+$x_{2j}$ corresponde ao abastecimento da região São paulo II para os cinco destinos, com j de 1 até 5\\
+$x_{3j}$ corresponde ao abastecimento da região Perímetros irrigados do NE para os cinco destinos, com j de 1 até 5\\
+  Minimizar  $52x_{11} + 77x_{12} + 241x_{13} + 466x_{14} + 444x_{15}$ \\
+   $60x_{21} + 85x_{22} + 249x_{23} + 473x_{24} + 452x_{25}$ \\
+    $110x_{31} + 135x_{32} + 191x_{33} + 501x_{34} + 477x_{35}$ \\
+  Sujeitos à \\
+  $52x_{11} + 77x_{12} + 241x_{13} + 466x_{14} + 444x_{15} \leq 771$ \\
+  $60x_{21} + 85x_{22} + 249x_{23} + 473x_{24} + 452x_{25} \leq 964$ \\
+  $110x_{31} + 135x_{32} + 191x_{33} + 501x_{34} + 477x_{35} \leq 193$ \\
+  $18(x_{11} + x_{21} + x_{31}) + 7(x_{12} + x_{22} + x_{32}) + 1680(x_{13} + x_{23} + x_{33}) + 159(x_{14} + x_{24} + x_{34}) + 64(x_{15} + x_{25} + x_{35}) \leq 1928$ \\
+  $9(x_{11} + x_{21} + x_{31}) + 4(x_{12} + x_{22} + x_{32}) + 840(x_{13} + x_{23} + x_{33}) + 70(x_{14} + x_{24} + x_{34})  + 32(x_{15} + x_{25} + x_{35})\leq 964$ \\
+  $x_{ij} \geq 0$\\
+  
+    
+\end{center}
+
+
+
+
+
+\end{document}
+
+
+
